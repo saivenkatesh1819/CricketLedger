@@ -8,13 +8,16 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-14
 
     env:
       APPLE_ID: ${{ secrets.APPLE_ID }}
       APP_SPECIFIC_PASSWORD: ${{ secrets.GITHUBACTIONS }}
 
     steps:
+      - name: Select Xcode 15.4
+        run: sudo xcode-select -s /Applications/Xcode_15.4.app
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
