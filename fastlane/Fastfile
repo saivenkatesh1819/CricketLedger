@@ -1,0 +1,33 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Run unit tests for the app"
+  lane :unit_tests do
+    scan(
+      scheme: "Cricket Ledger"
+    )
+  end
+
+  desc "Build and export the app for App Store"
+  lane :beta do
+#    sync_code_signing(
+#      type: "appstore",
+#      git_url: "https://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@github.com/saivenkatesh1819/CricketLedgerCerts.git",
+#      force: true
+#    )
+    build_app(
+      xcargs: "-allowProvisioningUpdates",
+      scheme: "Cricket Ledger",
+      export_method: "app-store",
+      export_options: {
+        compileBitcode: true,
+        manageAppVersionAndBuildNumber: true,
+        signingStyle: "automatic",
+        method: "app-store",
+        uploadSymbols: true,
+        uploadBitcode: true
+      }
+    )
+    upload_to_testflight
+  end
+end
