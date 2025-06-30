@@ -10,11 +10,6 @@ platform :ios do
 
   desc "Build and export the app for App Store"
   lane :beta do
-#    sync_code_signing(
-#      type: "appstore",
-#      git_url: "https://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@github.com/saivenkatesh1819/CricketLedgerCerts.git",
-#      force: true
-#    )
     build_app(
       xcargs: "-allowProvisioningUpdates",
       scheme: "Cricket Ledger",
