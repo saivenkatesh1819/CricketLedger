@@ -15,16 +15,17 @@ jobs:
       APP_SPECIFIC_PASSWORD: ${{ secrets.GITHUBACTIONS }}
 
     steps:
-      - name: Set up Xcode 16.4
+      - name: Set up Xcode 15.3
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '16.4'
+          xcode-version: '15.3'
 
       - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Confirm Swift Version
         run: swift --version
+        # Should output Swift 6.1.x
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
