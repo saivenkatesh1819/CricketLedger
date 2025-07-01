@@ -23,6 +23,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Install Swift 6.1.0
+        uses: fwal/setup-swift@v1
+        with:
+          swift-version: "6.1.0"
+
+      - name: Confirm Swift Version
+        run: swift --version
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
