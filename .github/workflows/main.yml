@@ -12,18 +12,20 @@ jobs:
     env:
       APPLE_ID: ${{ secrets.APPLE_ID }}
       APP_SPECIFIC_PASSWORD: ${{ secrets.GITHUBACTIONS }}
-      IDEFileSystemSynchronizedGroupsEnabled: "NO"   # Disable the FS Synchronized Groups to fix Xcode assertion
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Disable File System Synchronized Groups (fix Xcode 15.3 assert)
+        run: echo "IDEFileSystemSynchronizedGroupsEnabled=NO" >> $GITHUB_ENV
+
       - name: Set up Xcode 15.3
         uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: '15.3'
 
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Confirm Swift Version
+      - name: Confirm Swift version
         run: swift --version
 
       - name: Set up Ruby
@@ -39,3 +41,5 @@ jobs:
 
       - name: Run Fastlane beta lane
         run: bundle exec fastlane beta
+        # No need to re-specify IDEFileSystemSynchronizedGroupsEnabled here,
+        # it's set globally in $GITHUB_ENV
