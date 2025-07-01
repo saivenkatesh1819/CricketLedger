@@ -14,7 +14,13 @@ jobs:
       APP_SPECIFIC_PASSWORD: ${{ secrets.GITHUBACTIONS }}
 
     steps:
-  
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1
 
       - name: Install Bundler
         run: gem install bundler
@@ -24,4 +30,3 @@ jobs:
 
       - name: Run Fastlane beta lane
         run: bundle exec fastlane beta
-        
