@@ -219,7 +219,7 @@
 				};
 			};
 			buildConfigurationList = 37865BCA2DF0B70A00344115 /* Build configuration list for PBXProject "Cricket Ledger" */;
-			compatibilityVersion = "Xcode 15.3";
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
