@@ -6,13 +6,14 @@ on:
       - main
   workflow_dispatch:
 
-
 jobs:
   build:
     runs-on: macos-14
     env:
       APPLE_ID: ${{ secrets.APPLE_ID }}
       APP_SPECIFIC_PASSWORD: ${{ secrets.GITHUBACTIONS }}
+      IDEFileSystemSynchronizedGroupsEnabled: "NO"   # Disable the FS Synchronized Groups to fix Xcode assertion
+
     steps:
       - name: Set up Xcode 15.3
         uses: maxim-lobanov/setup-xcode@v1
@@ -38,5 +39,3 @@ jobs:
 
       - name: Run Fastlane beta lane
         run: bundle exec fastlane beta
-        env:
-          IDEFileSystemSynchronizedGroupsEnabled: "YES"
