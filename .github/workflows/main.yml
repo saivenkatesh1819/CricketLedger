@@ -6,14 +6,13 @@ on:
       - main
   workflow_dispatch:
 
+
 jobs:
   build:
     runs-on: macos-14
-
     env:
       APPLE_ID: ${{ secrets.APPLE_ID }}
       APP_SPECIFIC_PASSWORD: ${{ secrets.GITHUBACTIONS }}
-
     steps:
       - name: Set up Xcode 15.3
         uses: maxim-lobanov/setup-xcode@v1
@@ -25,7 +24,6 @@ jobs:
 
       - name: Confirm Swift Version
         run: swift --version
-        # Should output Swift 6.1.x
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -40,3 +38,5 @@ jobs:
 
       - name: Run Fastlane beta lane
         run: bundle exec fastlane beta
+        env:
+          IDEFileSystemSynchronizedGroupsEnabled: "YES"
