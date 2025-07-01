@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -41,7 +41,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		37865BFA2DF0B70C00344115 /* Exceptions for "Cricket Ledger" folder in "Cricket Ledger" target */ = {
+		37865BFA2DF0B70C00344115 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -51,24 +51,9 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		37865BD12DF0B70A00344115 /* Cricket Ledger */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				37865BFA2DF0B70C00344115 /* Exceptions for "Cricket Ledger" folder in "Cricket Ledger" target */,
-			);
-			path = "Cricket Ledger";
-			sourceTree = "<group>";
-		};
-		37865BEB2DF0B70C00344115 /* Cricket LedgerTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Cricket LedgerTests";
-			sourceTree = "<group>";
-		};
-		37865BF52DF0B70C00344115 /* Cricket LedgerUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Cricket LedgerUITests";
-			sourceTree = "<group>";
-		};
+		37865BD12DF0B70A00344115 /* Cricket Ledger */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (37865BFA2DF0B70C00344115 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Cricket Ledger"; sourceTree = "<group>"; };
+		37865BEB2DF0B70C00344115 /* Cricket LedgerTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Cricket LedgerTests"; sourceTree = "<group>"; };
+		37865BF52DF0B70C00344115 /* Cricket LedgerUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Cricket LedgerUITests"; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +219,7 @@
 				};
 			};
 			buildConfigurationList = 37865BCA2DF0B70A00344115 /* Build configuration list for PBXProject "Cricket Ledger" */;
+			compatibilityVersion = "Xcode 15.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -246,7 +232,6 @@
 				3725E7D82DFF937C0082C0D4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				3725E7E12DFF944C0082C0D4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 37865BD02DF0B70A00344115 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
