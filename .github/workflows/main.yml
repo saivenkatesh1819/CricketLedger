@@ -20,10 +20,10 @@ jobs:
       - name: Disable File System Synchronized Groups (fix Xcode 15.3 assert)
         run: echo "IDEFileSystemSynchronizedGroupsEnabled=NO" >> $GITHUB_ENV
 
-      - name: Set up Xcode 15.3
+      - name: Set up Xcode 15.0
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '15.3'
+          xcode-version: '15.0'
 
       - name: Confirm Swift version
         run: swift --version
